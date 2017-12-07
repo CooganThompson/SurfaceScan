@@ -1,0 +1,670 @@
+# Energetics for H diffusion 
+
+ energetics 
+
+ ############################################################################ 
+
+cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 1 # ClusterNum1 
+  site_types 1 
+  cluster_eng 0.722675 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 2 # ClusterNum2 
+  site_types 2 
+  cluster_eng 0.722677 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 3 # ClusterNum3 
+  site_types 3 
+  cluster_eng 0.722677 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 4 # ClusterNum4 
+  site_types 4 
+  cluster_eng 0.722677 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 5 # ClusterNum5 
+  site_types 5 
+  cluster_eng 0.722677 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 6 # ClusterNum6 
+  site_types 6 
+  cluster_eng 0.722675 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 7 # ClusterNum7 
+  site_types 7 
+  cluster_eng 0.453859 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 8 # ClusterNum8 
+  site_types 8 
+  cluster_eng 0.453859 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 9 # ClusterNum9 
+  site_types 9 
+  cluster_eng 0.453859 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 10 # ClusterNum10 
+  site_types 10 
+  cluster_eng 0.453859 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 11 # ClusterNum11 
+  site_types 11 
+  cluster_eng 0.453859 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 12 # ClusterNum12 
+  site_types 12 
+  cluster_eng 0.453859 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 13 # ClusterNum13 
+  site_types 13 
+  cluster_eng 0.187875 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 14 # ClusterNum14 
+  site_types 14 
+  cluster_eng 0.187875 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 15 # ClusterNum15 
+  site_types 15 
+  cluster_eng 0.187875 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 16 # ClusterNum16 
+  site_types 16 
+  cluster_eng 0.161294 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 17 # ClusterNum17 
+  site_types 17 
+  cluster_eng 0.161294 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 18 # ClusterNum18 
+  site_types 18 
+  cluster_eng 0.161294 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 19 # ClusterNum19 
+  site_types 19 
+  cluster_eng 0.161294 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 20 # ClusterNum20 
+  site_types 20 
+  cluster_eng 0.161294 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 21 # ClusterNum21 
+  site_types 21 
+  cluster_eng 0.161294 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 22 # ClusterNum22 
+  site_types 22 
+  cluster_eng 0.065195 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 23 # ClusterNum23 
+  site_types 23 
+  cluster_eng 0.065756 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 24 # ClusterNum24 
+  site_types 24 
+  cluster_eng 0.065756 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 25 # ClusterNum25 
+  site_types 25 
+  cluster_eng 0.148237 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 26 # ClusterNum26 
+  site_types 26 
+  cluster_eng 0.148237 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 27 # ClusterNum27 
+  site_types 27 
+  cluster_eng 0.148237 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 28 # ClusterNum28 
+  site_types 28 
+  cluster_eng 0.148237 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 29 # ClusterNum29 
+  site_types 29 
+  cluster_eng 0.148237 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 30 # ClusterNum30 
+  site_types 30 
+  cluster_eng 0.148237 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 31 # ClusterNum31 
+  site_types 31 
+  cluster_eng 0.253573 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 32 # ClusterNum32 
+  site_types 32 
+  cluster_eng 0.253573 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 33 # ClusterNum33 
+  site_types 33 
+  cluster_eng 0.253573 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 34 # ClusterNum34 
+  site_types 34 
+  cluster_eng 0.253573 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 35 # ClusterNum35 
+  site_types 35 
+  cluster_eng 0.253573 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 36 # ClusterNum36 
+  site_types 36 
+  cluster_eng 0.253573 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 37 # ClusterNum37 
+  site_types 37 
+  cluster_eng 0.125468 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 38 # ClusterNum38 
+  site_types 38 
+  cluster_eng 0.125472 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 39 # ClusterNum39 
+  site_types 39 
+  cluster_eng 0.125472 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 40 # ClusterNum40 
+  site_types 40 
+  cluster_eng 0.125472 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 41 # ClusterNum41 
+  site_types 41 
+  cluster_eng 0.125472 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 42 # ClusterNum42 
+  site_types 42 
+  cluster_eng 0.125468 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 43 # ClusterNum43 
+  site_types 43 
+  cluster_eng 0.233253 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 44 # ClusterNum44 
+  site_types 44 
+  cluster_eng 0.233253 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 45 # ClusterNum45 
+  site_types 45 
+  cluster_eng 0.233253 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 46 # ClusterNum46 
+  site_types 46 
+  cluster_eng 0.107923 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 47 # ClusterNum47 
+  site_types 47 
+  cluster_eng 0.107923 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 48 # ClusterNum48 
+  site_types 48 
+  cluster_eng 0.107923 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 49 # ClusterNum49 
+  site_types 49 
+  cluster_eng -0.008203 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 50 # ClusterNum50 
+  site_types 50 
+  cluster_eng -0.001015 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ cluster H 
+   sites 1 
+   lattice_state 
+   1 H*  1 
+
+variant 51 # ClusterNum51 
+  site_types 51 
+  cluster_eng -0.001015 
+  graph_multiplicity 1 
+end_variant 
+
+end_cluster 
+##########
+ 

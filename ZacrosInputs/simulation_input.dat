@@ -1,0 +1,44 @@
+# KMC simulation specification 
+
+random_seed               123 
+
+temperature               413.00 
+pressure                  1.00 
+
+n_gas_species             1 
+gas_specs_names           H2 
+gas_energies              0.000 
+gas_molec_weights         2.016 
+gas_molar_fracs           1.000 
+n_surf_species            1 
+surf_specs_names          H* 
+surf_specs_dent           1 
+
+snapshots                 on event 100000000 
+process_statistics        on event 1000000 
+species_numbers           on event 100000000 
+
+event_report              on elemevent 1000000 
+
+max_steps                 100000000 
+max_time                  100 
+
+wall_time                 43200 
+
+# no_restart 
+
+# enable_stiffness_scaling 
+# check_every 200 
+# stiffness_scale_all 
+# min_separation 40.0 
+# max_separation 60.0 
+# max_qequil_separation 3.0 
+# stiffn_coeff_threshold 0.10 
+# energetics_list         on event 
+# debug_report_processes 
+# debug_report_global_energetics 
+# debug_check_processes 
+# debug_check_lattice 
+
+finish 
+

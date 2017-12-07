@@ -1,0 +1,2086 @@
+# HCOOH diffusion on Au Cluster 
+
+ mechanism 
+
+ ############################################################################ 
+
+reversible_step diff/H/1_TO_2 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 1_TO_2 VariantNum1
+  site_types 1 2 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.014612 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/1_TO_6 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 1_TO_6 VariantNum1
+  site_types 1 6 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.004840 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/1_TO_7 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 1_TO_7 VariantNum1
+  site_types 1 7 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.056140 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/2_TO_3 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 2_TO_3 VariantNum1
+  site_types 2 3 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.004838 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/2_TO_8 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 2_TO_8 VariantNum1
+  site_types 2 8 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.055925 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/3_TO_4 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 3_TO_4 VariantNum1
+  site_types 3 4 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.014610 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/3_TO_9 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 3_TO_9 VariantNum1
+  site_types 3 9 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.055925 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/4_TO_5 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 4_TO_5 VariantNum1
+  site_types 4 5 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.004838 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/4_TO_10 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 4_TO_10 VariantNum1
+  site_types 4 10 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.055925 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/5_TO_6 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 5_TO_6 VariantNum1
+  site_types 5 6 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.014610 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/5_TO_11 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 5_TO_11 VariantNum1
+  site_types 5 11 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.055925 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/6_TO_12 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 6_TO_12 VariantNum1
+  site_types 6 12 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.056140 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/7_TO_8 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 7_TO_8 VariantNum1
+  site_types 7 8 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.074502 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/7_TO_12 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 7_TO_12 VariantNum1
+  site_types 7 12 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.074502 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/7_TO_13 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 7_TO_13 VariantNum1
+  site_types 7 13 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.074804 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/7_TO_22 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 7_TO_22 VariantNum1
+  site_types 7 22 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.052459 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/7_TO_25 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 7_TO_25 VariantNum1
+  site_types 7 25 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.051321 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/8_TO_9 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 8_TO_9 VariantNum1
+  site_types 8 9 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.007852 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/8_TO_13 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 8_TO_13 VariantNum1
+  site_types 8 13 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.074804 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/8_TO_23 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 8_TO_23 VariantNum1
+  site_types 8 23 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.052273 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/8_TO_26 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 8_TO_26 VariantNum1
+  site_types 8 26 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.051321 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/9_TO_10 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 9_TO_10 VariantNum1
+  site_types 9 10 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.074502 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/9_TO_14 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 9_TO_14 VariantNum1
+  site_types 9 14 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.074804 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/9_TO_23 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 9_TO_23 VariantNum1
+  site_types 9 23 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.051864 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/9_TO_27 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 9_TO_27 VariantNum1
+  site_types 9 27 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.051321 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/10_TO_11 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 10_TO_11 VariantNum1
+  site_types 10 11 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.007852 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/10_TO_14 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 10_TO_14 VariantNum1
+  site_types 10 14 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.074804 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/10_TO_24 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 10_TO_24 VariantNum1
+  site_types 10 24 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.052273 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/10_TO_28 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 10_TO_28 VariantNum1
+  site_types 10 28 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.051321 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/11_TO_12 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 11_TO_12 VariantNum1
+  site_types 11 12 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.074502 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/11_TO_15 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 11_TO_15 VariantNum1
+  site_types 11 15 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.074804 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/11_TO_24 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 11_TO_24 VariantNum1
+  site_types 11 24 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.051864 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/11_TO_29 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 11_TO_29 VariantNum1
+  site_types 11 29 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.051321 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/12_TO_15 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 12_TO_15 VariantNum1
+  site_types 12 15 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.074804 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/12_TO_22 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 12_TO_22 VariantNum1
+  site_types 12 22 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.051893 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/12_TO_30 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 12_TO_30 VariantNum1
+  site_types 12 30 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.051321 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/13_TO_16 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 13_TO_16 VariantNum1
+  site_types 13 16 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.001019 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/13_TO_17 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 13_TO_17 VariantNum1
+  site_types 13 17 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.001019 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/14_TO_18 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 14_TO_18 VariantNum1
+  site_types 14 18 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.001019 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/14_TO_19 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 14_TO_19 VariantNum1
+  site_types 14 19 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.001019 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/15_TO_20 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 15_TO_20 VariantNum1
+  site_types 15 20 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.001019 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/15_TO_21 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 15_TO_21 VariantNum1
+  site_types 15 21 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.001019 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/16_TO_25 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 16_TO_25 VariantNum1
+  site_types 16 25 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.027600 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/17_TO_26 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 17_TO_26 VariantNum1
+  site_types 17 26 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.027600 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/18_TO_27 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 18_TO_27 VariantNum1
+  site_types 18 27 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.027600 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/19_TO_28 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 19_TO_28 VariantNum1
+  site_types 19 28 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.027600 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/20_TO_29 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 20_TO_29 VariantNum1
+  site_types 20 29 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.027600 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/21_TO_30 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 21_TO_30 VariantNum1
+  site_types 21 30 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.027600 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/22_TO_25 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 22_TO_25 VariantNum1
+  site_types 22 25 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.123709 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/22_TO_30 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 22_TO_30 VariantNum1
+  site_types 22 30 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.123709 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/23_TO_26 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 23_TO_26 VariantNum1
+  site_types 23 26 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.123240 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/23_TO_27 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 23_TO_27 VariantNum1
+  site_types 23 27 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.123240 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/24_TO_28 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 24_TO_28 VariantNum1
+  site_types 24 28 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.123240 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/24_TO_29 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 24_TO_29 VariantNum1
+  site_types 24 29 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.123240 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/25_TO_31 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 25_TO_31 VariantNum1
+  site_types 25 31 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.108566 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/25_TO_37 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 25_TO_37 VariantNum1
+  site_types 25 37 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.127504 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/26_TO_32 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 26_TO_32 VariantNum1
+  site_types 26 32 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.108566 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/26_TO_38 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 26_TO_38 VariantNum1
+  site_types 26 38 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.127504 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/27_TO_33 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 27_TO_33 VariantNum1
+  site_types 27 33 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.108566 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/27_TO_39 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 27_TO_39 VariantNum1
+  site_types 27 39 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.127504 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/28_TO_34 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 28_TO_34 VariantNum1
+  site_types 28 34 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.108566 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/28_TO_40 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 28_TO_40 VariantNum1
+  site_types 28 40 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.127504 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/29_TO_35 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 29_TO_35 VariantNum1
+  site_types 29 35 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.108566 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/29_TO_41 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 29_TO_41 VariantNum1
+  site_types 29 41 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.127504 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/30_TO_36 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 30_TO_36 VariantNum1
+  site_types 30 36 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.108566 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/30_TO_42 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 30_TO_42 VariantNum1
+  site_types 30 42 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.127504 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/31_TO_37 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 31_TO_37 VariantNum1
+  site_types 31 37 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.021719 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/31_TO_43 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 31_TO_43 VariantNum1
+  site_types 31 43 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.003207 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/32_TO_38 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 32_TO_38 VariantNum1
+  site_types 32 38 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.021912 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/32_TO_43 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 32_TO_43 VariantNum1
+  site_types 32 43 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.003207 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/33_TO_39 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 33_TO_39 VariantNum1
+  site_types 33 39 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.021912 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/33_TO_44 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 33_TO_44 VariantNum1
+  site_types 33 44 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.003207 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/34_TO_40 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 34_TO_40 VariantNum1
+  site_types 34 40 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.021912 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/34_TO_44 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 34_TO_44 VariantNum1
+  site_types 34 44 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.003207 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/35_TO_41 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 35_TO_41 VariantNum1
+  site_types 35 41 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.021912 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/35_TO_45 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 35_TO_45 VariantNum1
+  site_types 35 45 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.003207 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/36_TO_42 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 36_TO_42 VariantNum1
+  site_types 36 42 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.021912 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/36_TO_45 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 36_TO_45 VariantNum1
+  site_types 36 45 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.003207 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/37_TO_46 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 37_TO_46 VariantNum1
+  site_types 37 46 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.266381 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/37_TO_49 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 37_TO_49 VariantNum1
+  site_types 37 49 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.039928 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/38_TO_46 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 38_TO_46 VariantNum1
+  site_types 38 46 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.266377 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/38_TO_50 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 38_TO_50 VariantNum1
+  site_types 38 50 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.039885 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/39_TO_47 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 39_TO_47 VariantNum1
+  site_types 39 47 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.266377 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/39_TO_50 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 39_TO_50 VariantNum1
+  site_types 39 50 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.039885 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/40_TO_47 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 40_TO_47 VariantNum1
+  site_types 40 47 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.266377 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/40_TO_51 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 40_TO_51 VariantNum1
+  site_types 40 51 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.039885 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/41_TO_48 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 41_TO_48 VariantNum1
+  site_types 41 48 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.266377 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/41_TO_51 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 41_TO_51 VariantNum1
+  site_types 41 51 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.040121 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/42_TO_48 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 42_TO_48 VariantNum1
+  site_types 42 48 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.266381 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/42_TO_49 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 42_TO_49 VariantNum1
+  site_types 42 49 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.040262 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/43_TO_46 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 43_TO_46 VariantNum1
+  site_types 43 46 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.013388 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/44_TO_47 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 44_TO_47 VariantNum1
+  site_types 44 47 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.013388 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/45_TO_48 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 45_TO_48 VariantNum1
+  site_types 45 48 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.013388 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/46_TO_49 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 46_TO_49 VariantNum1
+  site_types 46 49 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.427231 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/46_TO_50 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 46_TO_50 VariantNum1
+  site_types 46 50 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.427370 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/47_TO_50 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 47_TO_50 VariantNum1
+  site_types 47 50 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.427370 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/47_TO_51 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 47_TO_51 VariantNum1
+  site_types 47 51 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.427370 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/48_TO_49 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 48_TO_49 VariantNum1
+  site_types 48 49 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.427231 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+reversible_step diff/H/48_TO_51 
+  sites 2 
+  neighboring 1-2 
+  initial 
+  1 H*  1 
+  2  *  1 
+  final 
+  2  *  1 
+  1 H*  1 
+
+variant 48_TO_51 VariantNum1
+  site_types 48 51 
+  pre_expon 1.00e+13 
+  pe_ratio 1.00e+00 
+  activ_eng 0.427370 
+  prox_factor 0.50 
+#  stiffness_scalable 
+end_variant 
+
+end_reversible_step 
+########## 
+end_mechanism
