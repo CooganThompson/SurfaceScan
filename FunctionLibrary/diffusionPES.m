@@ -103,10 +103,10 @@ classdef diffusionPES
         %------------------------------------------------------------
         %                %
         function self=fillinviasymmetry(self,symmetry) %Uses the point group symmetry operations (kinda) so you can graph the whole surface with only each unique part specified
-        disp('Be sure you defined alpha and beta well')
-        disp('Currently only good for C_n and C_nv symmetries, C_nh is untested')
+        disp('Be sure you defined alpha as one of the rotation points and beta along one of the mirror planes')
+        disp('Currently only good for C_n and C_nv symmetries, C_nh is untested d can be done, I just havnt needed it')
             
-            if strcmpi(symmetry,'Cs') 
+            if strcmpi(symmetry,'Cs')||strcmpi(symmetry,'cs')
                 symmetry='C1v';
             end
 

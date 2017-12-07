@@ -1,7 +1,21 @@
-function Barriers=GetDiffusionParameters(PES,MinsLoc)
+function Barriers=GetDiffusionParameters(PES,MinsLoc,Symmetry)
 %Note this is not well tested as I left right as I added some new stuff
 %Use the backup version, it is well tested
 %Must put this into matrix form
+%Currently only works for Cv symmetries
+
+if nargin==1 %Allows you to just input the the Full PES class
+    MinsLoc=PES.Mins;
+    Symmetry=PES.Symmetry;
+    PES=PES.Class;
+elseif nargin==2 %if you don't give it a symmetry, you have to pay the price
+    Symmetry='C1';
+end
+
+if strcmpi(Symmetry,'Cs')||strcmpi(Symmetry,'cs') %easier than making it it's own class
+    symmetry='C1v';
+end
+
 PES=PES.interpolatePESGrid;
 MEPObject=minimumEnergyPathway(PES.alphaGrid,PES.betaGrid,PES.energiesGrid);
 
@@ -35,7 +49,11 @@ while i<length(MinsLoc)
                 MEPObject=MEPObject.calculateMEPMultiTS({MinsLoc(i,:)},{MinsLoc(j,:)});
                 [NumberTSs,~]=size(MEPObject.TS);
                 [NumberMins,~]=size(MEPObject.Minima);
-                MEPObject.plotMEPLines
+                MEPObjectSSS=GiveSymmetryVersions(MEPObject,Symmetry)
+                
+                for k=1:length(MEPObjectSSS)
+                MEPObjectSSS{i}.plotMEPLines
+                end
                 drawnow
             catch
                 NumberTSs=0;

@@ -1,7 +1,7 @@
 classdef minimumEnergyPathway
     
     
-    properties (GetAccess=public,SetAccess=private)
+    properties (GetAccess=public)
         alphaGrid
         betaGrid
         energiesGrid
@@ -31,6 +31,7 @@ classdef minimumEnergyPathway
             
         end
         
+   
         %------------------------------------------------------------
         %
         function self=calculateMEP(self,StartPoints,EndPoints)
@@ -345,6 +346,8 @@ classdef minimumEnergyPathway
             nimages=ceil(dist*55);
             if nimages < 3
                 nimages=3;
+            elseif mod(nimages,2)==0
+                nimages=nimages+1;
             end
             
             
