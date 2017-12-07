@@ -1,3 +1,4 @@
+function MobilityInMetersPerSecond = GetMobility(PESFull)
 
 Time=PESFull.Results.Time(end);
 
@@ -10,5 +11,7 @@ for i=2:2:length(PESFull.Results.Names)
     
 end
 
-Mobility=DistanceTraveled/Time %ang/s
-MobilityInMetersPerSecond=Mobility*10^-10
+Mobility=DistanceTraveled/Time; %ang/s
+MobilityInMetersPerSecond=Mobility*10^-10;
+
+end
