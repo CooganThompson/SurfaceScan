@@ -332,7 +332,7 @@ classdef minimumEnergyPathway
         
         %------------------------------------------------------------
         %
-        function [MEP_Coords,Minima_Coords,TS_Coords]=...
+        function [MEP_Coords,Minima_Coords,TS_Coords]=... %considering making this output the energies as well
                 getMEPengineMultiTS(self,CurrStartPoint,CurrEndPoint,varargin)
             
             X1=sind(CurrStartPoint{1}(1)).*cosd(CurrStartPoint{1}(2));

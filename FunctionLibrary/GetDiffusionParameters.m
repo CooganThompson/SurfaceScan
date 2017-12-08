@@ -13,13 +13,23 @@ elseif nargin==2 %if you don't give it a symmetry, you have to pay the price
 end
 
 if strcmpi(Symmetry,'Cs')||strcmpi(Symmetry,'cs') %easier than making it it's own class
-    symmetry='C1v';
+    Symmetry='C1v';
 end
+
+children = get(gca, 'children'); %gets the number of things that should be there so I can delete the rest later
+NumOfPlotThings=length(children);
 
 PES=PES.interpolatePESGrid;
 MEPObject=minimumEnergyPathway(PES.alphaGrid,PES.betaGrid,PES.energiesGrid);
 
+%initalizations
 Barriers.Grid=cell(length(MinsLoc));
+Barriers.Pathway=cell(1);
+Barriers.Name=cell(1);
+Barriers.StartMinIndex=cell(1);
+Barriers.EndMinIndex=cell(1);
+Barriers.Energies=cell(1);
+
 count=0;
 secondentryflag=0;
 i=0;
@@ -49,15 +59,19 @@ while i<length(MinsLoc)
                 MEPObject=MEPObject.calculateMEPMultiTS({MinsLoc(i,:)},{MinsLoc(j,:)});
                 [NumberTSs,~]=size(MEPObject.TS);
                 [NumberMins,~]=size(MEPObject.Minima);
-                MEPObjectSSS=GiveSymmetryVersions(MEPObject,Symmetry)
                 
-                for k=1:length(MEPObjectSSS)
-                MEPObjectSSS{i}.plotMEPLines
+                PlotMEPAllSymmetry(MEPObject,Symmetry)
+                
+                [TScount,~]=size(MEPObject.TS);
+                for k=1:TScount
+                    TSEnergies(k)=getMEPEnergies(PES,MEPObject.TS(k,1),MEPObject.TS(k,2));
                 end
-                drawnow
+                TSEnergy=max(TSEnergies);
+                
             catch
                 NumberTSs=0;
                 NumberMins=0;
+                TSEnergy=NaN;
                 disp('Maybe try drawing it yourself?')
             end
             
@@ -68,8 +82,8 @@ while i<length(MinsLoc)
             end
             
             while exitflag==0
-                disp('    Start     End       Distance  TS        Mins')
-                disp([i     j   dist     NumberTSs NumberMins])
+                disp('    Start     End       Distance  TS        Mins    HighestTS')
+                disp([i     j   dist     NumberTSs NumberMins TSEnergy])
                 accepted=input('Is this an acceptable MEP? y/n (or O for options)','s');
                 
                 if length(accepted)~=1
@@ -79,10 +93,9 @@ while i<length(MinsLoc)
                     secondentryflag=0;
                     AtoBcount=AtoBcount+1;
                     
-                    
                 elseif accepted=='O'||accepted=='o'
                     disp('Options')
-                    disp('Remove line, r')
+%                     disp('Remove line, r')
                     disp('Skip to Next Starting Point, s')
                     disp('Use a Different Line, d')
                     disp('Ues this one and include another path between the mins, a')
@@ -91,10 +104,9 @@ while i<length(MinsLoc)
                     secondentryflag=1;
                     AtoBcount=AtoBcount+1;
                     
-                    
-                elseif accepted=='R'||accepted=='r'
-                    children = get(gca, 'children');
-                    delete(children(2));
+%                 elseif accepted=='R'||accepted=='r'
+%                     children = get(gca, 'children');
+%                     delete(children(2));
                 elseif accepted=='S'||accepted=='s'
                     skipflag=1;
                     exitflag=1;
@@ -110,17 +122,24 @@ while i<length(MinsLoc)
                         end
                     end
                     
-                    children = get(gca, 'children');
-                    delete(children(1));
+                    CleanPlot(NumOfPlotThings)
+                    
                     try
                         MEPObject=MEPObject.calculateMEPMultiTS({points([1,2])},{points([3,4])});
                     catch
                         disp('Try different points')
                     end
+                    
                     [NumberTSs,~]=size(MEPObject.TS);
                     [NumberMins,~]=size(MEPObject.Minima);
-                    MEPObject.plotMEPLines
-                    drawnow
+                    
+                    PlotMEPAllSymmetry(MEPObject,Symmetry)
+                    
+                    [TScount,~]=size(MEPObject.TS);
+                    for k=1:TScount
+                        TSEnergies(k)=getMEPEnergies(PES,MEPObject.TS(k,1),MEPObject.TS(k,2));
+                    end
+                    TSEnergy=max(TSEnergies);
                     
                 else
                     disp('Invalied')
@@ -129,39 +148,19 @@ while i<length(MinsLoc)
             end
             
             if accepted=='y'||accepted=='Y'||accepted=='a'||accepted=='A'
-                
-                disp('counted')
+
                 count=count+1;
+                Barriers=AddToBarriers(Barriers,MEPObject,TSEnergy,i,j,PES,MinsLoc);
+                 
                 
-                [TScount,~]=size(MEPObject.TS);
-                for k=1:TScount
-                    TSEnergies(k)=getMEPEnergies(PES,MEPObject.TS(k,1),MEPObject.TS(k,2));
-                end
-                TSEnergy=max(TSEnergies);
                 
-                Barriers.Grid{i,j}(AtoBcount)=TSEnergy;
-                Barriers.Grid{j,i}(AtoBcount)=TSEnergy;
-                
-                Barriers.Pathway{count}=[MEPObject.XCoords MEPObject.YCoords];
-                if AtoBcount>1
-                    Barriers.Name{count}=sprintf('%.0f_TO_%.0f_%0.f',i,j,AtoBcount);
-                elseif AtoBcount==1
-                    Barriers.Name{count}=sprintf('%.0f_TO_%.0f',i,j);
-                else
-                    disp('Barriers.Name error')
-                end
-                Barriers.StartMinIndex{count}=i;
-                Barriers.EndMinIndex{count}=j;
-                
-                Barriers.Energies{count}=[getMEPEnergies(PES,MinsLoc(i,1),MinsLoc(i,2)) TSEnergy getMEPEnergies(PES,MinsLoc(j,1),MinsLoc(j,2))];
-                children = get(gca, 'children');
-                delete(children(1));
+                CleanPlot(NumOfPlotThings)
+
             else
                 Barriers.Grid{i,j}=NaN;
                 Barriers.Grid{j,i}=NaN;
                 
-                children = get(gca, 'children');
-                delete(children(1));
+                CleanPlot(NumOfPlotThings)
             end
         else
             Barriers.Grid{i,j}=NaN;

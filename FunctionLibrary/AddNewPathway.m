@@ -1,4 +1,4 @@
-function PESFull=AddPathway(PESFull)
+function PESFull=AddNewPathway(PESFull)
 
 PESFull.Class=PESFull.Class.interpolatePESGrid;
 MEPObject=minimumEnergyPathway(PESFull.Class.alphaGrid,PESFull.Class.betaGrid,PESFull.Class.energiesGrid);
@@ -6,9 +6,8 @@ MEPObject=minimumEnergyPathway(PESFull.Class.alphaGrid,PESFull.Class.betaGrid,PE
 FirstPoint=input('Please input the number of the first minimum \n');
 SecondPoint=input('Please input the number of the second minimum \n');
 
-%Make sure inputs are valid
 checkflag=0;
-while checkflag==0
+while checkflag==0 %Make sure inputs are valid
     
     if FirstPoint~=floor(FirstPoint)||FirstPoint>length(PESFull.Mins)
         disp('The first entry is invalid \n')
@@ -29,8 +28,7 @@ while checkflag==0
         temp=FirstPoint;
         FirstPoint=SecondPoint;
         SecondPoint=temp;
-        checkflag=1;
-        
+        checkflag=1;   
     end
     
 end
@@ -124,33 +122,35 @@ if accepted=='y'||accepted=='Y'
     PESFull.Barriers.Grid{SecondPoint,FirstPoint}(AtoBcount)=TSEnergy;
     
     %Finds out where the new path should go
-    foundStartSpot=0;
-    foundEndSpot=0;
+    count=FindCorrectIndexForPathway(PESFull.Barriers);
+%     foundStartSpot=0;
+%     foundEndSpot=0;
+%     
+%     count=0;
+%     while foundStartSpot==0
+%         count=count+1;
+%         
+%         if count==length(PESFull.Barriers.StartMinIndex)
+%             count=count+1;
+%             foundStartSpot=1;
+%             foundEndSpot=1;
+%         elseif PESFull.Barriers.StartMinIndex{count}==FirstPoint
+%             foundStartSpot=1;
+%         elseif PESFull.Barriers.StartMinIndex{count}>=FirstPoint
+%             foundStartSpot=1;
+%             foundEndSpot=1;
+%         end
+%     end
+%     
+%     while foundEndSpot==0
+%         count=count+1;
+%         
+%         if PESFull.Barriers.EndMinIndex{count}>=SecondPoint
+%             foundEndSpot=1;
+%         end
+%         
+%     end
     
-    count=0;
-    while foundStartSpot==0
-        count=count+1;
-        
-        if count==length(PESFull.Barriers.StartMinIndex)
-            count=count+1;
-            foundStartSpot=1;
-            foundEndSpot=1;
-        elseif PESFull.Barriers.StartMinIndex{count}==FirstPoint
-            foundStartSpot=1;
-        elseif PESFull.Barriers.StartMinIndex{count}>=FirstPoint
-            foundStartSpot=1;
-            foundEndSpot=1;
-        end
-    end
-    
-    while foundEndSpot==0
-        count=count+1;
-        
-        if PESFull.Barriers.EndMinIndex{count}>=SecondPoint
-            foundEndSpot=1;
-        end
-        
-    end
     
     PESFull.Barriers.Pathway=[ { PESFull.Barriers.Pathway{1:count-1}} [MEPObject.XCoords MEPObject.YCoords] { PESFull.Barriers.Pathway{count:end}}];
     if AtoBcount==1
