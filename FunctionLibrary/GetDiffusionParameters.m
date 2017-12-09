@@ -32,31 +32,33 @@ Barriers.Energies=cell(1);
 
 count=0;
 secondentryflag=0;
-i=0;
-while i<length(MinsLoc)
-    i=i+1;
+FirstPoint=0;
+while FirstPoint<length(MinsLoc) %loop over all the points
+    FirstPoint=FirstPoint+1;
     
     skipflag=0;
     
-    j=i;
-    while j<length(MinsLoc)
-        j=j+1;
+    SecondPoint=FirstPoint;
+    while SecondPoint<length(MinsLoc) %loop over all the points
+        SecondPoint=SecondPoint+1;
+        
+      %  break here!
         
         AtoBcount=0;
         
-        X1=sind(MinsLoc(i,1)).*cosd(MinsLoc(i,2));
-        X2=sind(MinsLoc(j,1)).*cosd(MinsLoc(j,2));
-        Y1=sind(MinsLoc(i,1)).*sind(MinsLoc(i,2));
-        Y2=sind(MinsLoc(j,1)).*sind(MinsLoc(j,2));
-        Z1=cosd(MinsLoc(i,1));
-        Z2=cosd(MinsLoc(j,1));
+        X1=sind(MinsLoc(FirstPoint,1)).*cosd(MinsLoc(FirstPoint,2));
+        X2=sind(MinsLoc(SecondPoint,1)).*cosd(MinsLoc(SecondPoint,2));
+        Y1=sind(MinsLoc(FirstPoint,1)).*sind(MinsLoc(FirstPoint,2));
+        Y2=sind(MinsLoc(SecondPoint,1)).*sind(MinsLoc(SecondPoint,2));
+        Z1=cosd(MinsLoc(FirstPoint,1));
+        Z2=cosd(MinsLoc(SecondPoint,1));
         dist=sqrt((X1-X2)^2+(Y1-Y2)^2+(Z1-Z2)^2);
         
         if ~skipflag%dist<1.2 %mindistnace on perfect sphere/radius
             disp('-----------------------------------------')
             
             try
-                MEPObject=MEPObject.calculateMEPMultiTS({MinsLoc(i,:)},{MinsLoc(j,:)});
+                MEPObject=MEPObject.calculateMEPMultiTS({MinsLoc(FirstPoint,:)},{MinsLoc(SecondPoint,:)});
                 [NumberTSs,~]=size(MEPObject.TS);
                 [NumberMins,~]=size(MEPObject.Minima);
                 
@@ -83,7 +85,7 @@ while i<length(MinsLoc)
             
             while exitflag==0
                 disp('    Start     End       Distance  TS        Mins    HighestTS')
-                disp([i     j   dist     NumberTSs NumberMins TSEnergy])
+                disp([FirstPoint     SecondPoint   dist     NumberTSs NumberMins TSEnergy])
                 accepted=input('Is this an acceptable MEP? y/n (or O for options)','s');
                 
                 if length(accepted)~=1
@@ -150,24 +152,37 @@ while i<length(MinsLoc)
             if accepted=='y'||accepted=='Y'||accepted=='a'||accepted=='A'
 
                 count=count+1;
-                Barriers=AddToBarriers(Barriers,MEPObject,TSEnergy,i,j,PES,MinsLoc);
-                 
+                %Barriers=AddToBarriers(Barriers,MEPObject,TSEnergy,FirstPoint,SecondPoint,PES,MinsLoc);
+                
+                Points=GetAllSymmetryPoints(MinsLoc,FirstPoint,SecondPoint,Symmetry);
+                Points=Cleanpoints(Points);
+                
+                MEPObjectSSS=GiveSymmetryVersions(MEPObject,Symmetry);
+
+                [Barrierslength,~]=size(Points)
+                for l=1:Barrierslength%length(MEPObjectSSS)
+                Barriers=AddToBarriers(Barriers,MEPObjectSSS{l},TSEnergy,Points(l,1),Points(l,4),PES,MinsLoc);
+                end
+
+                
+
+                
                 
                 
                 CleanPlot(NumOfPlotThings)
 
             else
-                Barriers.Grid{i,j}=NaN;
-                Barriers.Grid{j,i}=NaN;
+                Barriers.Grid{FirstPoint,SecondPoint}=NaN;
+                Barriers.Grid{SecondPoint,FirstPoint}=NaN;
                 
                 CleanPlot(NumOfPlotThings)
             end
         else
-            Barriers.Grid{i,j}=NaN;
-            Barriers.Grid{j,i}=NaN;
+            Barriers.Grid{FirstPoint,SecondPoint}=NaN;
+            Barriers.Grid{SecondPoint,FirstPoint}=NaN;
         end
         if secondentryflag==1
-            j=j-1;
+            SecondPoint=SecondPoint-1;
         end
         
         
