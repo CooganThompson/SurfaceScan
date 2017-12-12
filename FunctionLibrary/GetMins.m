@@ -19,7 +19,7 @@ while i < length(R)
     Z=cosd(C);
     
     dist=(X(i)-X(i+1:end)).^2+(Y(i)-Y(i+1:end)).^2+(Z(i)-Z(i+1:end)).^2;
-    
+        
     distmin=.007;
     if sum(dist==0)>0
         for j=find(~dist)
@@ -34,12 +34,37 @@ while i < length(R)
             Energies(i+j)=PES.energiesGrid(R(i+j)*scale(1)+1,C(i+j)*scale(2)+1);
         end
         
-        tempR=R(Energies==min(Energies));
-        tempC=C(Energies==min(Energies));
-        %R(i)=mean(tempR);
-        %C(i)=mean(tempC);
+        tempR=R(Energies-min(Energies)<1e-4);
+        tempC=C(Energies-min(Energies)<1e-4);
+        
+        if length(tempR)>1
+            if sum(tempR<10)>0 && sum(tempR>350)>0
+                for k=1:length(tempR)
+                    if tempR(k)>350
+                        tempR(k)=tempR(k)-360;
+                    end
+                end
+            end
+            R(i)=mean(tempR);
+            C(i)=mean(tempC);
+            if R(i)<0
+                R(i)=R(i)+360;
+            end
+        else
+            
+        end
+        
+        
+        
+        
         C(i)=round(scale(1)*mean(tempC))/scale(1);
         R(i)=round(scale(1)*mean(tempR))/scale(1);
+        
+        
+        [C,R]
+        if C(2)==58.7500
+            3
+        end
         
         
         for j=find(dist<=distmin)

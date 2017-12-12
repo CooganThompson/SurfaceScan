@@ -18,6 +18,15 @@ end
 
 children = get(gca, 'children'); %gets the number of things that should be there so I can delete the rest later
 NumOfPlotThings=length(children);
+if length(children)~=length(MinsLoc)+2
+    warning('The plot this is on might produce unusual results')
+    Answer=input('Would you like me to try to clean the plot y/n','s');
+    if Answer=='y'||Answer=='Y'
+        NumOfPlotThings=length(MinsLoc)+2;
+        CleanPlot(NumOfPlotThings)
+    end
+end
+
 
 PES=PES.interpolatePESGrid;
 MEPObject=minimumEnergyPathway(PES.alphaGrid,PES.betaGrid,PES.energiesGrid);
@@ -42,8 +51,6 @@ while FirstPoint<length(MinsLoc) %loop over all the points
     while SecondPoint<length(MinsLoc) %loop over all the points
         SecondPoint=SecondPoint+1;
         
-      %  break here!
-        
         AtoBcount=0;
         
         X1=sind(MinsLoc(FirstPoint,1)).*cosd(MinsLoc(FirstPoint,2));
@@ -54,29 +61,32 @@ while FirstPoint<length(MinsLoc) %loop over all the points
         Z2=cosd(MinsLoc(SecondPoint,1));
         dist=sqrt((X1-X2)^2+(Y1-Y2)^2+(Z1-Z2)^2);
         
-        if ~skipflag%dist<1.2 %mindistnace on perfect sphere/radius
-            disp('-----------------------------------------')
+        BoxIsEmptyFlag=isempty(Barriers.Grid{FirstPoint,SecondPoint});
+        
+        if BoxIsEmptyFlag%dist<1.2 %~skipflag && BoxIsEmptyFlag%dist<1.2 %mindistnace on perfect sphere/radius
             
-            try
-                MEPObject=MEPObject.calculateMEPMultiTS({MinsLoc(FirstPoint,:)},{MinsLoc(SecondPoint,:)});
-                [NumberTSs,~]=size(MEPObject.TS);
-                [NumberMins,~]=size(MEPObject.Minima);
-                
-                PlotMEPAllSymmetry(MEPObject,Symmetry)
-                
-                [TScount,~]=size(MEPObject.TS);
-                for k=1:TScount
-                    TSEnergies(k)=getMEPEnergies(PES,MEPObject.TS(k,1),MEPObject.TS(k,2));
+            
+            if ~skipflag
+                try
+                    MEPObject=MEPObject.calculateMEPMultiTS({MinsLoc(FirstPoint,:)},{MinsLoc(SecondPoint,:)});
+                    [NumberTSs,~]=size(MEPObject.TS);
+                    [NumberMins,~]=size(MEPObject.Minima);
+                    
+                    PlotMEPAllSymmetry(MEPObject,Symmetry)
+                    
+                    [TScount,~]=size(MEPObject.TS);
+                    for k=1:TScount
+                        TSEnergies(k)=getMEPEnergies(PES,MEPObject.TS(k,1),MEPObject.TS(k,2));
+                    end
+                    TSEnergy=max(TSEnergies);
+                    
+                catch
+                    NumberTSs=0;
+                    NumberMins=0;
+                    TSEnergy=NaN;
+                    disp('Maybe try drawing it yourself?')
                 end
-                TSEnergy=max(TSEnergies);
-                
-            catch
-                NumberTSs=0;
-                NumberMins=0;
-                TSEnergy=NaN;
-                disp('Maybe try drawing it yourself?')
             end
-            
             exitflag=0;
             if skipflag
                 exitflag=1;
@@ -84,19 +94,22 @@ while FirstPoint<length(MinsLoc) %loop over all the points
             end
             
             while exitflag==0
+                disp('-----------------------------------------')
                 disp('    Start     End       Distance  TS        Mins    HighestTS')
                 disp([FirstPoint     SecondPoint   dist     NumberTSs NumberMins TSEnergy])
                 accepted=input('Is this an acceptable MEP? y/n (or O for options)','s');
                 
-                if length(accepted)~=1
+                if accepted=='EXIT'
+                    return
+                elseif length(accepted)~=1
                     disp('Please enter one and only one entry')
                 elseif accepted=='y'||accepted=='Y'||accepted=='n'||accepted=='N'
                     exitflag=1;
                     secondentryflag=0;
                     AtoBcount=AtoBcount+1;
-                    
                 elseif accepted=='O'||accepted=='o'
                     disp('Options')
+                    disp('"Save" and exit, EXIT')
 %                     disp('Remove line, r')
                     disp('Skip to Next Starting Point, s')
                     disp('Use a Different Line, d')
@@ -159,33 +172,34 @@ while FirstPoint<length(MinsLoc) %loop over all the points
                 
                 MEPObjectSSS=GiveSymmetryVersions(MEPObject,Symmetry);
 
-                [Barrierslength,~]=size(Points)
+                [Barrierslength,~]=size(Points);
                 for l=1:Barrierslength%length(MEPObjectSSS)
                 Barriers=AddToBarriers(Barriers,MEPObjectSSS{l},TSEnergy,Points(l,1),Points(l,4),PES,MinsLoc);
                 end
-
-                
-
-                
-                
                 
                 CleanPlot(NumOfPlotThings)
 
             else
-                Barriers.Grid{FirstPoint,SecondPoint}=NaN;
-                Barriers.Grid{SecondPoint,FirstPoint}=NaN;
+                Points=GetAllSymmetryPoints(MinsLoc,FirstPoint,SecondPoint,Symmetry);
+                Points=Cleanpoints(Points);
                 
+                
+                
+                [Barrierslength,~]=size(Points);
+                for l=1:Barrierslength
+                Barriers.Grid{Points(l,1),Points(l,4)}=NaN;
+                Barriers.Grid{Points(l,4),Points(l,1)}=NaN;
+                end
                 CleanPlot(NumOfPlotThings)
             end
-        else
-            Barriers.Grid{FirstPoint,SecondPoint}=NaN;
-            Barriers.Grid{SecondPoint,FirstPoint}=NaN;
+%         else
+%             Barriers.Grid{FirstPoint,SecondPoint}=NaN;
+%             Barriers.Grid{SecondPoint,FirstPoint}=NaN;
         end
         if secondentryflag==1
             SecondPoint=SecondPoint-1;
         end
-        
-        
+                
     end
 end
 end
