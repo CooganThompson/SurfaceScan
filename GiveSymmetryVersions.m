@@ -12,27 +12,33 @@ for i=1:Cnumber
 end
 
 CurrentSyms=length( MEPObjectSSS);
-if Symmetry(3)=='v'
-    for i=CurrentSyms+1:2*CurrentSyms
-        
-        MEPObjectSSS{i}=MEPObjectSSS{i-CurrentSyms};
-        
-        MEPObjectSSS{i}.YCoords=360-MEPObjectSSS{i}.YCoords;
-        MEPObjectSSS{i}.Minima(:,2)=360-MEPObjectSSS{i}.Minima(:,2);
-        MEPObjectSSS{i}.TS(2)=360-MEPObjectSSS{i}.TS(2);
+try
+    if Symmetry(3)=='v'
+        for i=CurrentSyms+1:2*CurrentSyms
+            
+            MEPObjectSSS{i}=MEPObjectSSS{i-CurrentSyms};
+            
+            MEPObjectSSS{i}.YCoords=360-MEPObjectSSS{i}.YCoords;
+            MEPObjectSSS{i}.Minima(:,2)=360-MEPObjectSSS{i}.Minima(:,2);
+            MEPObjectSSS{i}.TS(2)=360-MEPObjectSSS{i}.TS(2);
+        end
     end
+catch
 end
 
 CurrentSyms=length( MEPObjectSSS);
-if Symmetry(3)=='h'
-    for i=CurrentSyms+1:2*CurrentSyms
-        
-        MEPObjectSSS{i}=MEPObjectSSS{i-CurrentSyms};
-        
-        MEPObjectSSS{i}.XCoords=180-MEPObjectSSS{i}.XCoords;
-        MEPObjectSSS{i}.Minima(:,1)=180-MEPObjectSSS{i}.Minima(:,1);
-        MEPObjectSSS{i}.TS(1)=180-MEPObjectSSS{i}.TS(1);
+try
+    if Symmetry(3)=='h'
+        for i=CurrentSyms+1:2*CurrentSyms
+            
+            MEPObjectSSS{i}=MEPObjectSSS{i-CurrentSyms};
+            
+            MEPObjectSSS{i}.XCoords=180-MEPObjectSSS{i}.XCoords;
+            MEPObjectSSS{i}.Minima(:,1)=180-MEPObjectSSS{i}.Minima(:,1);
+            MEPObjectSSS{i}.TS(1)=180-MEPObjectSSS{i}.TS(1);
+        end
     end
+catch
 end
 
 end
