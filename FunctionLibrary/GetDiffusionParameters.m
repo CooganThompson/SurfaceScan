@@ -70,7 +70,7 @@ while FirstPoint<length(MinsLoc) %loop over all the points
         
         BoxIsEmptyFlag=isempty(Barriers.Grid{FirstPoint,SecondPoint});
         
-        if BoxIsEmptyFlag%dist<1.2 %~skipflag && BoxIsEmptyFlag%dist<1.2 %mindistnace on perfect sphere/radius
+        if BoxIsEmptyFlag||secondentryflag%dist<1.2 %~skipflag && BoxIsEmptyFlag%dist<1.2 %mindistnace on perfect sphere/radius
             
             
             if ~skipflag
@@ -112,10 +112,10 @@ while FirstPoint<length(MinsLoc) %loop over all the points
                         skipto=str2double(accepted(3:end));
                         exitflag=1;
                         accepted='n';
-                    elseif length(accepted)~=1
-                        disp('Please enter one and only one entry')
                     elseif accepted=='EXIT'
                         return
+                    elseif length(accepted)~=1
+                        disp('Please enter one and only one entry')
                     elseif accepted=='y'||accepted=='Y'||accepted=='n'||accepted=='N'
                         exitflag=1;
                         secondentryflag=0;

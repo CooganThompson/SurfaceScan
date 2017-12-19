@@ -4,7 +4,6 @@ function count=FindCorrectIndexForPathway(Barriers,FirstPoint,SecondPoint)
     foundEndSpot=0;
     count=0;
     
-
     while foundStartSpot==0
         count=count+1;
         
@@ -30,8 +29,11 @@ function count=FindCorrectIndexForPathway(Barriers,FirstPoint,SecondPoint)
         if count==length(Barriers.EndMinIndex)
             foundEndSpot=1;
             count=count+1;
-        elseif SecondPoint<=Barriers.EndMinIndex{count}||FirstPoint<Barriers.StartMinIndex{count}
+        elseif SecondPoint<Barriers.EndMinIndex{count}||FirstPoint<Barriers.StartMinIndex{count}
             foundEndSpot=1;
+        elseif SecondPoint==Barriers.EndMinIndex{count}||FirstPoint==Barriers.StartMinIndex{count}
+            foundEndSpot=1;
+            count=count+1;
         end
         
     end
