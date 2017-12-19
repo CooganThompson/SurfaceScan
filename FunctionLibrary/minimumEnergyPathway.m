@@ -83,62 +83,6 @@ classdef minimumEnergyPathway
                 
                 plotbrokenlines(self.XCoords{i},self.YCoords{i},'linestyle','-','color',Color,'linewidth',2)
 
-
-%                 Ydis=abs(diff(self.YCoords{i}));
-%                 skipped=[0 (Ydis>100)'];
-%                 blocks = cumsum(skipped);
-%                 if sum(blocks)>0
-%                     
-%                     indexofchange=diff(blocks);
-%                     point=find(indexofchange==1);
-%                     indexofchange(point+1:end+1)=indexofchange(point:end);
-%                     
-%                     IndexofFirst=find(indexofchange==1,1);
-%                     FirstBeta=self.YCoords{i}(IndexofFirst);
-%                     SecondBeta=self.YCoords{i}(IndexofFirst+1);
-%                     
-%                     if FirstBeta<180
-%                         FirstBeta=FirstBeta+360;
-%                         flag=1;
-%                     elseif SecondBeta<180
-%                         SecondBeta=SecondBeta+360;
-%                         flag=2;
-%                     else
-%                         error('Something is wrong with the points')
-%                     end
-%                     
-%                     Yvalues=self.XCoords{i}(indexofchange==1);
-%                     slope=diff(Yvalues)/(SecondBeta-FirstBeta);
-%                     
-%                     if flag==1
-%                         NewYvalue=slope*(360-FirstBeta)+Yvalues(1);
-%                     elseif flag==2
-%                         NewYvalue=slope*(360-SecondBeta)+Yvalues(2);
-%                     end
-%                     
-%                     self.XCoords{i}(point+3:end+2)=self.XCoords{i}(point+1:end);
-%                     self.YCoords{i}(point+3:end+2)=self.YCoords{i}(point+1:end);
-%                     
-%                     self.XCoords{i}(point+1:point+2)=NewYvalue;
-%                     
-%                     if flag==1
-%                         self.YCoords{i}(point+1:point+2)=[0 360];
-%                     elseif flag==2
-%                         self.YCoords{i}(point+1:point+2)=[360 0];
-%                     end
-%                     
-%                     Ydis=abs(diff(self.YCoords{i}));
-%                     skipped=[0 (Ydis>100)'];
-%                     blocks = cumsum(skipped);
-%                     
-%                 end
-%                 
-%                 for j=0:blocks(end)
-%                     plot(self.XCoords{i}(blocks==j),self.YCoords{i}(blocks==j),...
-%                         'linestyle','-','color',Color,'linewidth',2);
-%                     hold on
-%                 end
-
             end
             
         end
@@ -351,30 +295,18 @@ classdef minimumEnergyPathway
             end
             
             
-            if abs(CurrStartPoint{1}(2)-CurrEndPoint{1}(2))>180
+            if abs(CurrStartPoint{1}(2)-CurrEndPoint{1}(2))>180 %If the points need to go across the 0/360 line, it essentially does it from the back
                 
                 PESshifted=TranslateByBeta(self,180);
-                %CurrStartPoint{1}(2)=mod(CurrStartPoint{1}(2)+180,360);
                 ShiftedBetaStart=mod(CurrStartPoint{1}(2)+180,360);
                 ShiftedBetaEnd=mod(CurrEndPoint{1}(2)+180,360);
-                %CurrEndPoint{1}(2)=mod(CurrEndPoint{1}(2)+180,360);
                 
                 [MEP_XCoords,MEP_YCoords]=...
                     ztsMueller(PESshifted.alphaGrid,PESshifted.betaGrid,PESshifted.energiesGrid,...
                     CurrStartPoint{1}(1),...
                     ShiftedBetaStart,CurrEndPoint{1}(1),ShiftedBetaEnd,'nodraw','nimages',nimages);
                 
-%                 [MEP_XCoords,MEP_YCoords]=...
-%                     ztsMueller(PESshifted.alphaGrid,PESshifted.betaGrid,PESshifted.energiesGrid,...
-%                     CurrStartPoint{1}(1),...
-%                     ShiftedBetaStart,CurrEndPoint{1}(1),ShiftedBetaEnd,'nimages',nimages);
-%                 
-                %self=TranslateByBeta(self,180);
-                MEP_YCoords=mod(MEP_YCoords+180,360);
-                %MEP_XCoords=mod(MEP_XCoords+180,360);
-                %CurrStartPoint{1}(2)=mod(CurrStartPoint{1}(2)+180,360);
-                %CurrEndPoint{1}(2)=mod(CurrEndPoint{1}(2)+180,360);
-                
+                MEP_YCoords=mod(MEP_YCoords+180,360);       
             else
                 [MEP_XCoords,MEP_YCoords]=...
                     ztsMueller(self.alphaGrid,self.betaGrid,self.energiesGrid,...

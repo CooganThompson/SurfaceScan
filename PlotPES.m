@@ -73,9 +73,10 @@ clear; clc; close all
 % PES=diffusionPES('19_2_Co_vasp.dat');
 % PES.plotGoogleMapsView
 
-% %20_1
-% PES=fillinviasymmetry(diffusionPES('20_1vasp.dat'),'c3v');
-% PES.plotGoogleMapsView
+%20_1
+PESFull.Class=fillinviasymmetry(diffusionPES('20_1_vasp.dat'),'c3v');
+PESFull.Class.plotGoogleMapsView
+PESFull.Symmetry='C3v';
 
 % %20_1 Co
 % PES=diffusionPES('20_1_Co_vasp.dat');
@@ -95,13 +96,13 @@ clear; clc; close all
 % PES.plotMEP2(  {[40,100]},     {[40,280]})
 %PES.plotMEP2(  {[MinsLoc(4,:)]},{[MinsLoc(10,:)]})
 %
-PESFull.Class=PES;
+%PESFull.Class=PES;
 
 PESFull.Mins=GetMins(PESFull.Class);
 
 PESFull.Class.plotContourMapsView
 PlotMinsOnPES(PESFull);
-PESFull.Barriers=GetDiffusionParameters(PESFull.Class,PESFull.Mins);
+PESFull.Barriers=GetDiffusionParameters(PESFull);
 
 %to remove mins
 %PESFull.Mins(1,:)=[]
@@ -109,6 +110,8 @@ PESFull.Barriers=GetDiffusionParameters(PESFull.Class,PESFull.Mins);
 PESFull.Class.plotContourMapsView;
 PlotMinsOnPES(PESFull);
 SpiderWebPlot(PESFull);
+
+PlotTSEnergiesOnPES(PESFull)
 
 MakeZacrosInputForDiffusions(PESFull.Class,PESFull.Mins,PESFull.Barriers)
 
