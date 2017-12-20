@@ -8,7 +8,7 @@ for i=1:Cnumber
     
     MEPObjectSSS{i}.YCoords=mod(MEPObject.YCoords+(i-1)*360/Cnumber,360);
     MEPObjectSSS{i}.Minima(:,2)=mod(MEPObject.Minima(:,2)+(i-1)*360/Cnumber,360);
-    MEPObjectSSS{i}.TS(2)=mod(MEPObject.TS(2)+(i-1)*360/Cnumber,360);
+    MEPObjectSSS{i}.TS(:,2)=mod(MEPObject.TS(:,2)+(i-1)*360/Cnumber,360);
 end
 
 CurrentSyms=length( MEPObjectSSS);
