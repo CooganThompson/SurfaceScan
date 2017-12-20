@@ -81,8 +81,9 @@ while FirstPoint<length(MinsLoc) %loop over all the points
                     
                     PlotMEPAllSymmetry(MEPObject,Symmetry)
                     
+                    [TScount,~]=size(MEPObject.TS);
                     TSEnergies=0;
-                    for k=1:NumberTSs
+                    for k=1:TScount
                         TSEnergies(k)=getMEPEnergies(PESFull,MEPObject.TS(k,1),MEPObject.TS(k,2));
                     end
                     TSEnergy=max(TSEnergies);

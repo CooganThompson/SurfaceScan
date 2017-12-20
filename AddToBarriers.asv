@@ -11,32 +11,27 @@ Barriers.Grid{FirstPoint,SecondPoint}(AtoBcount)=TSEnergy;
 Barriers.Grid{SecondPoint,FirstPoint}(AtoBcount)=TSEnergy;
 
 TSLocation=MEPObject.TS(TSEnergy-TSEnergies<=1e-4,:);
-
-
-
-
-%[NumberTSs,~]=size(TSLocation);
-
-
-
-tolerance=45;
-TSLocation=AveragePointsAroundACylinder(TSLocation,tolerance);
-
+[NumberTSs,~]=size(TSLocation);
+if NumberTSs>1
+    if sum(TSLocation(:,2)<10)>0 && sum(TSLocation(:,2)>350)>0
         
+        for k=1:NumberTSs
+            if TSLocation(k,2)>350
+                TSLocation(k,2)=TSLocation(k,2);
+            end
+        end
         
-%         if NumberTSs>1        %Needs some fancy averaging so it doesn't put it in the middle on wrap around transition states, this might should be it's own function
-%             if sum(TSLocation(:,2)<10)>0 && sum(TSLocation(:,2)>350)>0
-%                 for k=1:NumberTSs
-%                     if TSLocation(k,2)>350
-%                         TSLocation(k,2)=TSLocation(k,2);
-%                     end
-%                 end
-%             end
-%             TSLocation=mean(TSLocation,1);
-%             if TSLocation(2)<0
-%                 TSLocation(2)=TSLocation(2)+360;
-%             end
-%         end
+    end
+    TSLocation=mean(TSLocation,1);
+    
+    
+    if TSLocation(2)<0
+        TSLocation(2)=TSLocation(2)+360;
+    end
+    
+    
+
+end
 
 if isempty(Barriers.Name{1}) %the first one has to be difficult sometimes
     
