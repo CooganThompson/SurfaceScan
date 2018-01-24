@@ -1,5 +1,6 @@
 function PESFull=AddNewPathway(PESFull)
 
+%Need these for like everything
 PESFull.Class=PESFull.Class.interpolatePESGrid;
 MEPObject=minimumEnergyPathway(PESFull.Class.alphaGrid,PESFull.Class.betaGrid,PESFull.Class.energiesGrid);
 

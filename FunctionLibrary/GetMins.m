@@ -57,11 +57,11 @@ while i < length(R)
 %             
 %         end
         
-        R(i)=Point(2)
-        C(i)=Point(1)
+        R(i)=Point(2);
+        C(i)=Point(1);
         
-        C(i)=round(scale(1)*mean(tempC))/scale(1);
-        R(i)=round(scale(1)*mean(tempR))/scale(1);
+        C(i)=round(scale(1)*Point(1))/scale(1);
+        R(i)=round(scale(1)*Point(2))/scale(1);
         
         
 %         [C,R]

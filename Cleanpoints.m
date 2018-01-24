@@ -11,8 +11,8 @@ end
 Points(Points(:,3)==360,3)=0;   %Cause 0=360
 Points(Points(:,6)==360,6)=0;
 
-Points(Points(:,2)<=1,3)=Points(1,3);   %To make sure all the top pieces are treated as the same point. Might need adjusting if the top isn't top enough
-Points(Points(:,5)>=179,6)=Points(1,6); %Similar thing for the bottom
+Points(Points(:,2)<=2,3)=Points(1,3);   %To make sure all the top pieces are treated as the same point. Might need adjusting if the top isn't top enough
+Points(Points(:,5)>=178,6)=Points(1,6); %Similar thing for the bottom
 
 flag=0;
 counter=1;

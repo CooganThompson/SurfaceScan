@@ -3,12 +3,17 @@ function MEPObjectSSS=GiveSymmetryVersions(MEPObject,Symmetry)
 
 Cnumber=str2num(Symmetry(2));
 
-for i=1:Cnumber
-    MEPObjectSSS{i}=MEPObject;
-    
-    MEPObjectSSS{i}.YCoords=mod(MEPObject.YCoords+(i-1)*360/Cnumber,360);
-    MEPObjectSSS{i}.Minima(:,2)=mod(MEPObject.Minima(:,2)+(i-1)*360/Cnumber,360);
-    MEPObjectSSS{i}.TS(:,2)=mod(MEPObject.TS(:,2)+(i-1)*360/Cnumber,360);
+MEPObjectSSS{1}=MEPObject;
+
+try
+    for i=2:Cnumber
+        MEPObjectSSS{i}=MEPObject;
+        
+        MEPObjectSSS{i}.YCoords=mod(MEPObject.YCoords+(i-1)*360/Cnumber,360);
+        MEPObjectSSS{i}.Minima(:,2)=mod(MEPObject.Minima(:,2)+(i-1)*360/Cnumber,360);
+        MEPObjectSSS{i}.TS(:,2)=mod(MEPObject.TS(:,2)+(i-1)*360/Cnumber,360);
+    end
+catch
 end
 
 CurrentSyms=length( MEPObjectSSS);

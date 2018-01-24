@@ -7,7 +7,7 @@ function Barriers=GetDiffusionParameters(PESFull)
 if nargin==1 %Allows you to just input the the Full PES class
     MinsLoc=PESFull.Mins;
     Symmetry=PESFull.Symmetry;
-    PESFull=PESFull.Class;
+    PES=PESFull.Class;
 elseif nargin==2 %if you don't give it a symmetry, you have to pay the price
     Symmetry='C1';
 end
@@ -20,34 +20,50 @@ children = get(gca, 'children'); %gets the number of things that should be there
 NumOfPlotThings=length(children);
 if length(children)~=length(MinsLoc)+2
     warning('The plot this is on might produce unusual results')
-    Answer=input('Would you like me to try to clean the plot y/n','s');
-    if Answer=='y'||Answer=='Y'
+    RedrawYorN=input('Would you like me to try to clean the plot y/n','s');
+    if RedrawYorN=='y'||RedrawYorN=='Y'
         NumOfPlotThings=length(MinsLoc)+2;
         CleanPlot(NumOfPlotThings)
     end
 end
 
 
-PESFull=PESFull.interpolatePESGrid;
-MEPObject=minimumEnergyPathway(PESFull.alphaGrid,PESFull.betaGrid,PESFull.energiesGrid);
+PES=PES.interpolatePESGrid;
+MEPObject=minimumEnergyPathway(PES.alphaGrid,PES.betaGrid,PES.energiesGrid);
 
-%initalizations
-Barriers.Grid=cell(length(MinsLoc));
-Barriers.Pathway=cell(1);
-Barriers.Name=cell(1);
-Barriers.StartMinIndex=cell(1);
-Barriers.EndMinIndex=cell(1);
-Barriers.Energies=cell(1);
-Barriers.TSLocaton=cell(1);
-
+%initializations 
 skipto=NaN;
 count=0;
 secondentryflag=0;
 FirstPoint=0;
+JumpFlag=0;
+
+%initalizations or loads
+try 
+    Barriers=PESFull.Barriers;
+    NewStart=input('Would you like to start somewhere other than the first unfilled y/n','s');
+    if NewStart=='y'||RedrawYorN=='Y'
+        GoToLocation=input('Where would you like to start [A B]');
+        JumpFlag=1;
+    end
+catch
+    Barriers.Grid=cell(length(MinsLoc));
+    Barriers.Pathway=cell(1);
+    Barriers.Name=cell(1);
+    Barriers.StartMinIndex=cell(1);
+    Barriers.EndMinIndex=cell(1);
+    Barriers.Energies=cell(1);
+    Barriers.TSLocaton=cell(1);
+end
+
 while FirstPoint<length(MinsLoc) %loop over all the points
     FirstPoint=FirstPoint+1;
     
     skipflag=0;
+    
+    if JumpFlag==1 %Part of the magic that allows you to jump to different points
+        FirstPoint=GoToLocation(1); 
+    end
     
     SecondPoint=FirstPoint;
     while SecondPoint<length(MinsLoc) %loop over all the points
@@ -57,6 +73,12 @@ while FirstPoint<length(MinsLoc) %loop over all the points
         end
         
         SecondPoint=SecondPoint+1;
+        
+        if JumpFlag==1 %Part of the magic that allows you to jump to different points
+            SecondPoint=GoToLocation(2);
+            %JumpFlag=0; Keep this here so it automatically runs what you
+            %jumped to
+        end
         
         AtoBcount=0;
         
@@ -70,8 +92,8 @@ while FirstPoint<length(MinsLoc) %loop over all the points
         
         BoxIsEmptyFlag=isempty(Barriers.Grid{FirstPoint,SecondPoint});
         
-        if BoxIsEmptyFlag||secondentryflag%dist<1.2 %~skipflag && BoxIsEmptyFlag%dist<1.2 %mindistnace on perfect sphere/radius
-            
+        if BoxIsEmptyFlag||secondentryflag||JumpFlag%dist<1.2 %~skipflag && BoxIsEmptyFlag%dist<1.2 %mindistnace on perfect sphere/radius
+            JumpFlag=0;
             
             if ~skipflag
                 try
@@ -83,7 +105,7 @@ while FirstPoint<length(MinsLoc) %loop over all the points
                     
                     TSEnergies=0;
                     for k=1:NumberTSs
-                        TSEnergies(k)=getMEPEnergies(PESFull,MEPObject.TS(k,1),MEPObject.TS(k,2));
+                        TSEnergies(k)=getMEPEnergies(PES,MEPObject.TS(k,1),MEPObject.TS(k,2));
                     end
                     TSEnergy=max(TSEnergies);
                 catch
@@ -125,6 +147,7 @@ while FirstPoint<length(MinsLoc) %loop over all the points
                         disp('Skip to Next Starting Point, s')
                         disp('Use a Different Line, d')
                         disp('Ues this one and include another path between the mins, a')
+                        disp('Jump to a certain point, j')
                     elseif accepted=='a'||accepted=='A'
                         exitflag=1;
                         secondentryflag=1;
@@ -137,6 +160,13 @@ while FirstPoint<length(MinsLoc) %loop over all the points
                         skipflag=1;
                         exitflag=1;
                         accepted='n';
+                        
+                    elseif accepted=='J'||accepted=='j'
+                        GoToLocation=input('Where would you like to start [A B]');
+                        JumpFlag=1;
+                        exitflag=1;
+                        accepted='n';
+                        
                     elseif accepted=='D'||accepted=='d'
                         
                         points=[];
@@ -164,7 +194,7 @@ while FirstPoint<length(MinsLoc) %loop over all the points
                         [TScount,~]=size(MEPObject.TS);
                         TSEnergies=0;
                         for k=1:TScount
-                            TSEnergies(k)=getMEPEnergies(PESFull,MEPObject.TS(k,1),MEPObject.TS(k,2));
+                            TSEnergies(k)=getMEPEnergies(PES,MEPObject.TS(k,1),MEPObject.TS(k,2));
                         end
                         TSEnergy=max(TSEnergies);
                         
@@ -189,7 +219,7 @@ while FirstPoint<length(MinsLoc) %loop over all the points
                 
                 [Barrierslength,~]=size(Points);
                 for l=1:Barrierslength%length(MEPObjectSSS)
-                    Barriers=AddToBarriers(Barriers,MEPObjectSSS{l},TSEnergy,Points(l,1),Points(l,4),PESFull,MinsLoc,TSEnergies);
+                    Barriers=AddToBarriers(Barriers,MEPObjectSSS{l},TSEnergy,Points(l,1),Points(l,4),PES,MinsLoc,TSEnergies);
                 end
                 
                 CleanPlot(NumOfPlotThings)
